@@ -4,9 +4,17 @@ import by.itstep.goutor.javalesson.lesson43.model.FirstThread;
 import by.itstep.goutor.javalesson.lesson43.model.FourthTread;
 import by.itstep.goutor.javalesson.lesson43.model.SecondThread;
 import by.itstep.goutor.javalesson.lesson43.model.ThirdThread;
+import by.itstep.goutor.javalesson.lesson43.model.entity.Writer;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
+
+        String[] text = {"First writer", "Second writer", "Third writer", "Four writer"
+        ,"Five writer"};
+
+        for (int i = 0; i < text.length; i++) {
+            new Writer(text[i]);
+        }
 
 
         /*/    /*/
