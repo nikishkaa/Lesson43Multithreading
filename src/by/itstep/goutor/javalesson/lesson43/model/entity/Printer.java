@@ -9,15 +9,12 @@ import java.util.concurrent.locks.ReentrantLock;
 public class Printer {
     private static final Random RANDOM;
     private static final int BOUND = 100;
-    private static Lock lock;
 
     static {
         RANDOM = new Random();
     }
 
-    {
-        lock = new ReentrantLock();
-    }
+
 
     public void print(String text) {
         try {
@@ -38,7 +35,5 @@ public class Printer {
         }
     }
 
-    public static Lock getLock() {
-        return lock;
-    }
+
 }

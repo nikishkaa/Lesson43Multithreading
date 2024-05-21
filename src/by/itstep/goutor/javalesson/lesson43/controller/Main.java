@@ -4,6 +4,7 @@ import by.itstep.goutor.javalesson.lesson43.model.entity.Printer;
 import by.itstep.goutor.javalesson.lesson43.model.entity.Writer;
 
 import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
@@ -12,9 +13,10 @@ public class Main {
                 , "Five writer"};
 
         Printer printer = new Printer();
+        Lock lock = new ReentrantLock();
 
         for (int i = 0; i < text.length; i++) {
-            new Writer(text[i], printer, 1);
+            new Writer(text[i], printer, lock);
         }
 
 
