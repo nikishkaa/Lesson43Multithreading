@@ -1,20 +1,33 @@
 package by.itstep.goutor.javalesson.lesson43.controller;
 
-import by.itstep.goutor.javalesson.lesson43.model.FirstThread;
-import by.itstep.goutor.javalesson.lesson43.model.FourthTread;
-import by.itstep.goutor.javalesson.lesson43.model.SecondThread;
-import by.itstep.goutor.javalesson.lesson43.model.ThirdThread;
+import by.itstep.goutor.javalesson.lesson43.model.entity.Printer;
 import by.itstep.goutor.javalesson.lesson43.model.entity.Writer;
+
+import java.util.concurrent.locks.Lock;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
 
         String[] text = {"First writer", "Second writer", "Third writer", "Four writer"
-        ,"Five writer"};
+                , "Five writer"};
+
+        Printer printer = new Printer();
 
         for (int i = 0; i < text.length; i++) {
-            new Writer(text[i]);
+            new Writer(text[i], printer, 1);
         }
+
+
+//        Printer printer = new Printer();
+//        Printer printer2 = new Printer();
+//        Object o = new Object();
+//
+//        for (int i = 0; i < 3; i++) {
+//            new Writer(text[i], printer, o).run();
+//        }
+
+
+
 
 
         /*/    /*/
