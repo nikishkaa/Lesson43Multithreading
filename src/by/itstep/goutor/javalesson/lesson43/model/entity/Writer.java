@@ -21,6 +21,7 @@ public class Writer implements Runnable {
     public void run() {
         int number = 0;
 
+
         while (true) {
             if (lock.tryLock()) {
                 try {
